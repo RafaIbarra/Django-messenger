@@ -6,7 +6,7 @@ set -o errexit
 # poetry install
 pip install -r requirements.txt
 
-python ./mensajeriaapp/manage.py collectstatic --no-input
+python manage.py collectstatic --no-input
 
-python ./mensajeriaapp/manage.py migrate
+python manage.py migrate
 
