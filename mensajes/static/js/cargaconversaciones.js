@@ -1,5 +1,6 @@
 console.log("El documento se cargo");
-const url ='http://127.0.0.1:8000/mensajes/mismensajes/';
+//const url ='http://127.0.0.1:8000/mensajes/mismensajes/';
+const url ='https://django-messenger.onrender.com/mensajes/mismensajes/';
 
 
 data=[{"id": 16, "con": "@lore", "mensaje": "chauuu", "Fecha": "2022-11-17T23:53:00.309Z"}, 
@@ -32,7 +33,7 @@ data.forEach((e,i) => {    //< ---  recorremos data
 });
 
 const myIp='127.0.0.1:8000';
-const endPoint='http://127.0.0.1:8000/mensajes/mismensajes/'
+const endPoint='https://django-messenger.onrender.com/mensajes/mismensajes/'
 console.log(endPoint);
 fetch(endPoint);
 

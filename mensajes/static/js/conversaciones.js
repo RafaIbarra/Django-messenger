@@ -8,7 +8,7 @@ function append(parent, el) {
 }
 
 const table = document.getElementById("alicuotas");
-const url = 'http://127.0.0.1:8000/mensajes/mismensajes/';
+const url = 'https://django-messenger.onrender.com/mensajes/mismensajes/';
 
 fetch(url)
 .then((resp) => resp.json())

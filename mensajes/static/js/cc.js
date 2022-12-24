@@ -6,7 +6,7 @@ function append(parent, el) {
 return parent.appendChild(el);
 }
 
-const url = 'http://127.0.0.1:8000/mensajes/mismensajes/';
+const url = 'https://django-messenger.onrender.com/mensajes/mismensajes/';
 const cards = document.getElementById("tarjeta");
 
 // fetch(url)
