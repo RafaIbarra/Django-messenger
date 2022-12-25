@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-    <form action="{% url 'mensajes:registro_conversacion' %}" method="">
+    <form action="/registroconversacion/" method="">
     {% csrf_token %}
     <fieldset>
         <legend> <h1>{{ usuarios }}</h1></legend>

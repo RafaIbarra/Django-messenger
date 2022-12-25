@@ -17,13 +17,13 @@ def home(request):
     if request.method=='GET':
         return render(request, 'home.html')
     else:
-        nombre=request.POST["nombre"]
-        apellido=request.POST["apellido"]
-        nacimiento=request.POST["nacimiento"]
-        nombre_usuario=request.POST["user"]
-        email=request.POST["correo"]
-        contrasena1=request.POST["contrasena1"]
-        contrasena2=request.POST["contrasena2"]
+        nombre=request.POST['nombre']
+        apellido=request.POST['apellido']
+        nacimiento=request.POST['nacimiento']
+        nombre_usuario=request.POST['user']
+        email=request.POST['correo']
+        contrasena1=request.POST['contrasena1']
+        contrasena2=request.POST['contrasena2']
         if contrasena1==contrasena2:
             try:
                 u=Usuarios(
@@ -46,7 +46,7 @@ def home(request):
                 #return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
                 id_usuario=usuario_reg.id
                 #return render(request, 'usuario.html',{"id_usuario":id_usuario})
-                return redirect('usuario',args=(id_usuario))
+                return redirect('usuario',args=(id_usuario,))
             except IntegrityError:
                 return render(request, 'ERROR.html')
 
