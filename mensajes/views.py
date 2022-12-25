@@ -75,10 +75,14 @@ def registro_usuario(request):
             login(request, user)
             usuario_reg=get_object_or_404(Usuarios,user_name=user)
 
-            return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
+            #return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
+            id_usuario=usuario_reg.id
+            return render(request, 'usuario.html',{
+            "id_usuario":id_usuario
+        })
         except IntegrityError:
-            pass
-            #return render(request, 'signup.html', {"form": UserCreationForm, "error": "Username already exists."})
+            return render(request, 'ERROR.html')
+            
 
     #return render(request, 'signup.html', {"form": UserCreationForm, "error": "Passwords did not match."})
 
