@@ -1,5 +1,5 @@
 from django.db import IntegrityError
-from django.shortcuts import render,get_object_or_404,HttpResponseRedirect
+from django.shortcuts import render,get_object_or_404,HttpResponseRedirect,redirect
 from django.utils import timezone
 from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate
@@ -82,9 +82,8 @@ def registro_usuario(request):
 
             #return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
             id_usuario=usuario_reg.id
-            return render(request, 'usuario.html',{
-            "id_usuario":id_usuario
-        })
+            #return render(request, 'usuario.html',{"id_usuario":id_usuario})
+            return redirect('usuario',args=(usuario_reg.id,))
         except IntegrityError:
             return render(request, 'ERROR.html')
             
