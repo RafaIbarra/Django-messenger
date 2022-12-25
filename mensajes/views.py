@@ -72,7 +72,8 @@ def registro_usuario(request):
                 correo=email,
                 activo=True,
                 ultima_conexion=timezone.now(),
-                fecha_registro=timezone.now()
+                fecha_registro=timezone.now(),
+                image='sinperfil'
             )
             u.save()
             user = User.objects.create_user(nombre_usuario, password=contrasena1)
@@ -83,7 +84,7 @@ def registro_usuario(request):
             #return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
             id_usuario=usuario_reg.id
             #return render(request, 'usuario.html',{"id_usuario":id_usuario})
-            return redirect('usuario',args=(usuario_reg.id,))
+            return redirect('usuario',args=(id_usuario))
         except IntegrityError:
             return render(request, 'ERROR.html')
             
