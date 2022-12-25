@@ -14,7 +14,42 @@ from . models import Participantes
 from . models import Chats
 
 def home(request):
-    return render(request, 'home.html')
+    if request.method=='GET':
+        return render(request, 'home.html')
+    else:
+        nombre=request.POST["nombre"]
+        apellido=request.POST["apellido"]
+        nacimiento=request.POST["nacimiento"]
+        nombre_usuario=request.POST["user"]
+        email=request.POST["correo"]
+        contrasena1=request.POST["contrasena1"]
+        contrasena2=request.POST["contrasena2"]
+        if contrasena1==contrasena2:
+            try:
+                u=Usuarios(
+                    nombre_usuario=nombre,
+                    apellido_usuario=apellido,
+                    fecha_nacimiento=nacimiento,
+                    user_name=nombre_usuario,
+                    correo=email,
+                    activo=True,
+                    ultima_conexion=timezone.now(),
+                    fecha_registro=timezone.now(),
+                    image='sinperfil'
+                )
+                u.save()
+                user = User.objects.create_user(nombre_usuario, password=contrasena1)
+                user.save()
+                login(request, user)
+                usuario_reg=get_object_or_404(Usuarios,user_name=user)
+
+                #return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
+                id_usuario=usuario_reg.id
+                #return render(request, 'usuario.html',{"id_usuario":id_usuario})
+                return redirect('usuario',args=(id_usuario))
+            except IntegrityError:
+                return render(request, 'ERROR.html')
+
 
 @login_required
 def usuario(request,id_usuario):
