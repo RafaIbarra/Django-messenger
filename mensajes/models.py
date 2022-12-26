@@ -76,7 +76,6 @@ class Usuarios(models.Model):
     nombre_usuario=models.CharField(max_length=200,blank=False)
     apellido_usuario=models.CharField(max_length=200,blank=False)
     fecha_nacimiento=models.DateField("Fecha Nacimiento")
-    sexo=models.CharField(max_length=1,blank=False,default="M")
     user_name=models.CharField(max_length=100,blank=False,unique=True)
     correo=models.EmailField()
     activo=models.BooleanField(default=False)
@@ -142,7 +141,7 @@ class Usuarios(models.Model):
                                         ('nombre_usuario',dato_usuario[0]['nombre_usuario'].strip()), 
                                         ('apellido_usuario',dato_usuario[0]['apellido_usuario'].strip()), 
                                         ('fecha_nacimiento',dato_usuario[0]['fecha_nacimiento'].strftime('%d/%m/%Y %H:%M:%S')), 
-                                        ('sexo',dato_usuario[0]['sexo']), 
+                                        # ('sexo',dato_usuario[0]['sexo']), 
                                         ('user_name',dato_usuario[0]['user_name'].strip()), 
                                         ('correo',dato_usuario[0]['correo']), 
                                         ('ultima_conexion',dato_usuario[0]['ultima_conexion'].strftime('%d/%m/%Y %H:%M:%S')), 
