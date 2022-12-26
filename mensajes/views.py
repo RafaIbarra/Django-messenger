@@ -51,7 +51,7 @@ def home(request):
                 return render(request, 'ERROR.html')
 
 
-@login_required
+# @login_required
 def usuario(request):
      try:
         id_activo=request.user.username
