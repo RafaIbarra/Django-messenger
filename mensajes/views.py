@@ -55,7 +55,7 @@ def home(request):
 def usuario(request):
      try:
         id_activo=request.user.username
-        usuarios=get_object_or_404(Usuarios,pk=id_activo)
+        usuarios=get_object_or_404(Usuarios,user_name=id_activo)
         return render(request, 'usuario.html',{
             "usuarios":usuarios
         })
