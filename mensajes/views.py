@@ -79,9 +79,7 @@ def signin(request):
         usuario_reg=get_object_or_404(Usuarios,user_name=user)
         id_usuario=usuario_reg.id
        # return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
-        return render(request, 'usuario.html',{
-            "id_usuario":id_usuario
-        })
+    return redirect('usuario')
        
         
 
