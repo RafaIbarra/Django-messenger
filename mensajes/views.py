@@ -46,7 +46,7 @@ def home(request):
                 #return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
                 id_usuario=usuario_reg.id
                 #return render(request, 'usuario.html',{"id_usuario":id_usuario})
-                return redirect('usuario',args=(id_usuario,))
+                return redirect('/mensajes/usuario',args=(id_usuario,))
             except IntegrityError:
                 return render(request, 'ERROR.html')
 
