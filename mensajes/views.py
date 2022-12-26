@@ -54,7 +54,7 @@ def home(request):
 # @login_required
 def usuario(request):
      try:
-        id_activo=request.user.username
+        id_activo=request.user
         usuarios=get_object_or_404(Usuarios,user_name=id_activo)
         return render(request, 'usuario.html',{
             "usuarios":usuarios
