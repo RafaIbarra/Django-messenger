@@ -11,7 +11,7 @@ python manage.py collectstatic --no-input
 python manage.py migrate
 
 python manage.py createsuperuser
-Username: rafael
-Email address: blasrafael1986@gmail.com
-Password: tricampeon799002
-Password (again): tricampeon799002
+python Username: rafael
+python Email address: blasrafael1986@gmail.com
+python Password: tricampeon799002
+python Password (again): tricampeon799002
