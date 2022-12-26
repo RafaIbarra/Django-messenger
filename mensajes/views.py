@@ -180,7 +180,7 @@ def registro_conversacion(request):
 
                 )
         cht.save()
-        return HttpResponseRedirect(reverse("mensajes:usuario",args=(user_activo.id,)))
+        return HttpResponseRedirect(reverse("usuario"))
 
 @login_required
 def mismensajes(request):
