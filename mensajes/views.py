@@ -46,15 +46,16 @@ def home(request):
                 #return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
                 id_usuario=usuario_reg.id
                 #return render(request, 'usuario.html',{"id_usuario":id_usuario})
-                return redirect('/mensajes/usuario',args=(id_usuario,))
+                return redirect('usuario')
             except IntegrityError:
                 return render(request, 'ERROR.html')
 
 
 @login_required
-def usuario(request,id_usuario):
+def usuario(request):
      try:
-        usuarios=get_object_or_404(Usuarios,pk=id_usuario)
+        id_activo=request.user.username
+        usuarios=get_object_or_404(Usuarios,pk=id_activo)
         return render(request, 'usuario.html',{
             "usuarios":usuarios
         })
