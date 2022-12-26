@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from mensajes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', include("mensajes.urls")),
+    path('', views.home, name='home'),
+    path("registrousuario/",views.registro_usuario,name="registro_usuario"),
+    path("usuario/",views.usuario,name="usuario"),
+    path("signin/",views.signin,name="signin"),
+    path("signout/",views.signout,name="signout"),
+    path("registroconversacion/",views.registro_conversacion,name="registro_conversacion"),
+    path("mismensajes/",views.mismensajes,name="mismensajes"),
+    path("chats/<str:remitente>/",views.listadochat,name="listadochat"),
 ]
