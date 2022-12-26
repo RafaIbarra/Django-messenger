@@ -15,7 +15,10 @@ from . models import Chats
 
 def home(request):
     if request.method=='GET':
-        return render(request, 'home.html')
+        usuario=get_object_or_404(Usuarios,id=1)
+        return render(request, 'home.html',{
+            'usuario':usuario,
+        })
     else:
         nombre=request.POST['nombre']
         apellido=request.POST['apellido']
