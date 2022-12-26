@@ -15,11 +15,10 @@ from . models import Chats
 
 def home(request):
     if request.method=='GET':
-        usuario=get_object_or_404(Usuarios,id=1)
-        return render(request, 'home.html',{
-            'usuario':usuario,
-        })
+        
+        return render(request, 'home.html')
     else:
+
         nombre=request.POST['nombre']
         apellido=request.POST['apellido']
         nacimiento=request.POST['nacimiento']
@@ -33,6 +32,7 @@ def home(request):
                     nombre_usuario=nombre,
                     apellido_usuario=apellido,
                     fecha_nacimiento=nacimiento,
+                    sexo='M',
                     user_name=nombre_usuario,
                     correo=email,
                     activo=True,
