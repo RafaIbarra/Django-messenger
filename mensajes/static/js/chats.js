@@ -11,7 +11,7 @@ export function cargadato(){
         return parent.appendChild(el);
         }
     
-        const urlchat = 'https://django-messenger.onrender.com/mensajes/chats/' + usuario;
+        const urlchat = 'https://django-messenger.onrender.com/chats/' + usuario;
         console.log(urlchat)
         const div3 = document.getElementById("Chat");
     
