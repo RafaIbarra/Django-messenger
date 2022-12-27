@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from mensajes import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +29,5 @@ urlpatterns = [
     path("registroconversacion/",views.registro_conversacion,name="registro_conversacion"),
     path("mismensajes/",views.mismensajes,name="mismensajes"),
     path("chats/<str:remitente>/",views.listadochat,name="listadochat"),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+ 
