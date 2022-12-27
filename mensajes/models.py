@@ -82,8 +82,8 @@ class Usuarios(models.Model):
     activo=models.BooleanField(default=False)
     ultima_conexion=models.DateTimeField("fecha ultma conexion")
     fecha_registro=models.DateTimeField("fecha registro")
-    #image=models.ImageField(default='sinperfil.png',blank=True,upload_to=create_path)
-    image=models.CharField(max_length=200,blank=False,default='sinperfil.png')
+    image=models.ImageField(default='sinperfil.png',blank=True,upload_to=create_path)
+    #image=models.CharField(max_length=200,blank=False,default='sinperfil.png')
 
     class Meta:
         db_table="Usuarios"
