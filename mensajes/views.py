@@ -182,7 +182,7 @@ def registro_conversacion(request):
         cht.save()
         return HttpResponseRedirect(reverse("usuario"))
 
-@login_required
+
 def mismensajes(request):
     id_activo=request.user.username
     datos=Usuarios.listado_converacion(id_activo)
@@ -195,7 +195,7 @@ def mismensajes(request):
     #return json(datos)
     return JsonResponse(datos,safe=False)
 
-@login_required
+
 def listadochat(request,remitente):
     id_activo=request.user.username
     datos=Usuarios.listado_chat(id_activo,remitente)
