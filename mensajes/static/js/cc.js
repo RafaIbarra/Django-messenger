@@ -1,10 +1,10 @@
-function createNode(element) {
-  return document.createElement(element);
-}
+// function createNode(element) {
+//   return document.createElement(element);
+// }
 
-function append(parent, el) {
-return parent.appendChild(el);
-}
+// function append(parent, el) {
+// return parent.appendChild(el);
+// }
 
 const url = 'https://django-messenger.onrender.com/mismensajes/';
 const cards = document.getElementById("tarjeta");
