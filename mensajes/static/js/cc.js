@@ -29,7 +29,7 @@ const cards = document.getElementById("tarjeta");
 
 // })
 
-import {cargadato} from './chats.js'
+//import {cargadato} from './chats.js'
 const div1 = document.getElementById("conversaciones");
 const div2 = document.getElementById("Chat");
 
@@ -54,15 +54,15 @@ fetch(url)
     td.appendChild(sep);
     us.appendChild(me);
     div1.appendChild(td);
-    function saludo()
-      {
+    // function saludo()
+    //   {
         
-       div2.innerHTML = e.mesajes.con;
+    //    div2.innerHTML = e.mesajes.con;
        
-       cargadato();
+    //    cargadato();
         
-      };
-    us.addEventListener('click',saludo,true);      
+    //   };
+    // us.addEventListener('click',saludo,true);      
     // let men = document.createElement("span");
     // men.innerHTML = e.mesajes.mensaje
     // div2.appendChild(men);
