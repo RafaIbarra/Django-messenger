@@ -6,7 +6,8 @@
     <fieldset>
         <legend> <h1>{{ usuarios.user_name }}</h1></legend>
   
-        <img src = "{% static 'sinperfil.png' %}" height="200" width="200" class="d-inline-block align-top">
+        {% comment %} <img src = "{% static 'sinperfil.png' %}" height="200" width="200" class="d-inline-block align-top"> {% endcomment %}
+        <img  src="{https://django-messenger.onrender.com/media/{{ usuarios.image }}" height="200" width="200" class="d-inline-block align-top"
            
             <div align=left id="Chat" style="width:400px; height:400px; overflow: scroll;"> 
                 
