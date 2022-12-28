@@ -18,9 +18,11 @@ from django.contrib.auth.models import User
 # from django.http import JsonResponse
 # import json
 
-
+# BASE_DIR = Path(__file__).resolve().parent.parent
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/')
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 def create_path(instance, filename):
-    return os.path.join('static/media/'+
+    return os.path.join(
         instance.user_name 
         + Path(filename).suffix
     )
