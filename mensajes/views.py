@@ -238,7 +238,7 @@ def miperfil(request):
         
         
         if len(request.FILES) >0 :
-            perfil.image=request.FILES['seleccionarfoto444']
+            perfil.image=request.FILES['seleccionarfoto']
             perfil.save()
         
         
