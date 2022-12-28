@@ -21,6 +21,7 @@ from django.contrib.auth.models import User
 # BASE_DIR = Path(__file__).resolve().parent.parent
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/')
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+from mensajeriaapp.settings import MEDIA_ROOT
 def create_path(instance, filename):
     return os.path.join(
         instance.user_name 
@@ -84,7 +85,7 @@ class Usuarios(models.Model):
     activo=models.BooleanField(default=False)
     ultima_conexion=models.DateTimeField("fecha ultma conexion")
     fecha_registro=models.DateTimeField("fecha registro")
-    image=models.ImageField(default='sinperfil.png',blank=True,upload_to='static/media/')
+    image=models.ImageField(default='sinperfil.png',blank=True,upload_to=MEDIA_ROOT)
     #image=models.CharField(max_length=200,blank=False,default='sinperfil.png')
 
     class Meta:
