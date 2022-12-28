@@ -13,6 +13,7 @@ from . models import Conversaciones
 from . models import Participantes
 from . models import Chats
 
+from django.core.files.storage import FileSystemStorage
 def home(request):
     if request.method=='GET':
         
@@ -237,7 +238,7 @@ def miperfil(request):
         
         
         if len(request.FILES) >0 :
-            perfil.image=request.FILES['seleccionarfoto']
+            perfil.image=request.FILES['seleccionarfoto444']
             perfil.save()
         
         
