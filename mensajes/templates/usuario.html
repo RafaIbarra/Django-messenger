@@ -6,8 +6,8 @@
     <fieldset>
         <legend> <h1>{{ usuarios.user_name }}</h1></legend>
   
-        {% comment %} <img src = "{% static 'sinperfil.png' %}" height="200" width="200" class="d-inline-block align-top"> {% endcomment %}
-        <img  src="https://django-messenger.onrender.com/static/{{ usuarios.image }}" height="200" width="200" class="d-inline-block align-top"
+        
+        
            
             <div align=left id="Chat" style="width:400px; height:400px; overflow: scroll;"> 
                 
@@ -29,6 +29,9 @@
         <br>
         
         <a href="{% url 'registro_conversacion'  %} " class="btn btn-info text-white w-100 mt-0 fw-semibold shadow-sm" >Nuevo Mensaje</a>
+        <div>
+            <img  src="https://django-messenger.onrender.com/static/{{ usuarios.image }}" height="200" width="200" class="d-inline-block align-top">
+        </div>
         <script type="module" src="{% static 'cc.js' %}"></script>
       
     </form>
