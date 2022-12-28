@@ -4,7 +4,7 @@
     <form action="/usuario/" method="">
     {% csrf_token %}
     <fieldset>
-        <legend> <h1>{{ usuarios.user_name }}</h1></legend>
+        <legend> <h1>{{ usuarios.image }}</h1></legend>
   
         
         
@@ -28,6 +28,7 @@
         <br>
         <br>
         
+        <a href="{% url 'miperfil'  %} " class="btn btn-info text-white w-100 mt-0 fw-semibold shadow-sm" >Mi perfil</a>
         <a href="{% url 'registro_conversacion'  %} " class="btn btn-info text-white w-100 mt-0 fw-semibold shadow-sm" >Nuevo Mensaje</a>
         <div>
             <img  src="https://django-messenger.onrender.com/static/media/{{ usuarios.image }}" height="200" width="200" class="d-inline-block align-top">

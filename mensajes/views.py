@@ -210,3 +210,36 @@ def listadochat(request,remitente):
     return JsonResponse(datos,safe=False)
     
 
+@login_required
+def miperfil(request):
+    id_activo=request.user.username
+    datos_usuario=get_object_or_404(Usuarios,user_name=id_activo)
+    fechacorta = datos_usuario.fecha_nacimiento.strftime('%Y-%m-%d')
+    nombreusuario=datos_usuario.user_name[1:len(datos_usuario.user_name)]
+    nombrecompleto=str(datos_usuario.nombre_usuario)
+    if str(datos_usuario.sexo.lower())=='m':
+        sexo=True
+    else:
+        sexo=False
+    
+    if request.method=='GET':
+        return render(request, 'miperfil.html',{
+            "datos_usuario":datos_usuario,    
+            "fechacorta":fechacorta,
+            "nombreusuario":nombreusuario,
+            "nombrecompleto":nombrecompleto,
+            "sexo":sexo
+        })
+    else:
+    
+        usuario_reg=get_object_or_404(Usuarios,user_name=id_activo)
+        perfil=get_object_or_404(Usuarios,user_name=id_activo)
+        
+        
+        if len(request.FILES) >0 :
+            perfil.image=request.FILES['fotoperfil']
+            perfil.save()
+        
+        
+        
+        return HttpResponseRedirect(reverse("usuario"))
