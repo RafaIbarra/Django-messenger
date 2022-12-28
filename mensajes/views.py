@@ -237,9 +237,9 @@ def miperfil(request):
         
         
         if len(request.FILES) >0 :
-            perfil.image=request.FILES['fotoperfil']
+            perfil.image=request.FILES['seleccionarfoto']
             perfil.save()
         
         
         
-        return HttpResponseRedirect(reverse("usuario"))
+        return redirect('usuario')

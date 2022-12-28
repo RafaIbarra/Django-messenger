@@ -32,15 +32,12 @@
 
   
  
-  <button />
-  <button id="botofotoferil"> seleccionar
-  <input type="file"  id="fotoperfil" name="fotoperfil" style="display: none;">
-</button>
+
 
     
   
   {% comment %} </form> {% endcomment %}
-  <script>
+  {% comment %} <script>
     document.querySelector('#botofotoferil').onclick = function (e) {
       
       document.querySelector('#fotoperfil').click()
@@ -69,7 +66,7 @@
     fileUpload.onchange = function (e) {
         readFile(e.srcElement);
     }
-  </script>
+  </script> {% endcomment %}
 
  
 
