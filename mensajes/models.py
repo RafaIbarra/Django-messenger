@@ -20,7 +20,7 @@ from django.contrib.auth.models import User
 
 
 def create_path(instance, filename):
-    return os.path.join(
+    return os.path.join('static/media/'+
         instance.user_name 
         + Path(filename).suffix
     )
@@ -82,7 +82,7 @@ class Usuarios(models.Model):
     activo=models.BooleanField(default=False)
     ultima_conexion=models.DateTimeField("fecha ultma conexion")
     fecha_registro=models.DateTimeField("fecha registro")
-    image=models.ImageField(default='sinperfil.png',blank=True,upload_to='static/media/'+create_path)
+    image=models.ImageField(default='sinperfil.png',blank=True,upload_to=create_path)
     #image=models.CharField(max_length=200,blank=False,default='sinperfil.png')
 
     class Meta:
