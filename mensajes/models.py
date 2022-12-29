@@ -21,7 +21,7 @@ from django.contrib.auth.models import User
 # BASE_DIR = Path(__file__).resolve().parent.parent
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/')
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-from mensajeriaapp.settings import MEDIA_ROOT
+
 def create_path(instance, filename):
     return os.path.join(
         instance.user_name 
