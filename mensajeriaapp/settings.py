@@ -145,7 +145,7 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     #MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/')
     
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-    MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static')
+    #MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static')
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
