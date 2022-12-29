@@ -30,8 +30,7 @@ urlpatterns = [
     path("mismensajes/",views.mismensajes,name="mismensajes"),
     path("chats/<str:remitente>/",views.listadochat,name="listadochat"),
     path("miperfil/",views.miperfil,name="miperfil"),
- ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
- #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
  
  
