@@ -27,6 +27,9 @@ def create_path(instance, filename):
         instance.user_name 
         + Path(filename).suffix
     )
+def cambiar_ruta_de_fichero(instance, filename):
+    
+    return os.path.join('media',  filename)
 
 class VerificacionCuentas(models.Model):
     user_name=models.CharField(max_length=100,blank=False,unique=True)
@@ -85,7 +88,7 @@ class Usuarios(models.Model):
     activo=models.BooleanField(default=False)
     ultima_conexion=models.DateTimeField("fecha ultma conexion")
     fecha_registro=models.DateTimeField("fecha registro")
-    image=models.ImageField(default='sinperfil.png',blank=True,upload_to='mensajes/media/')
+    image=models.ImageField(default='sinperfil.png',blank=True,upload_to=cambiar_ruta_de_fichero)
     #image=models.CharField(max_length=200,blank=False,default='sinperfil.png')
 
     class Meta:
