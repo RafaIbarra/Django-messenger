@@ -78,8 +78,8 @@ def signin(request):
 
         login(request, user)
         usuario_reg=get_object_or_404(Usuarios,user_name=user)
-        usuario_reg.image='sinperfil.png'
-        usuario_reg.save()
+        # usuario_reg.image='sinperfil.png'
+        # usuario_reg.save()
         id_usuario=usuario_reg.id
        # return HttpResponseRedirect(reverse("mensajes:usuario",args=(usuario_reg.id,)))
     return redirect('usuario')
