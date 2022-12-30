@@ -22,11 +22,11 @@ from django.contrib.auth.models import User
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/')
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-def create_path(instance, filename):
-    return os.path.join(
-        instance.user_name 
-        + Path(filename).suffix
-    )
+# def create_path(instance, filename):
+#     return os.path.join(
+#         instance.user_name 
+#         + Path(filename).suffix
+#     )
 
 
 class VerificacionCuentas(models.Model):
